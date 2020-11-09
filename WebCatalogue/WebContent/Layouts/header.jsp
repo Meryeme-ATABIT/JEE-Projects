@@ -13,7 +13,7 @@
 	
 	<header class="header">
 		<nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #0A0A0A;">
-			  <a class="navbar-brand" href="#"><img src="../Assets/images/897ecbc4de52bcc013dbd15bf148edc7.png" class="rounded float-left" width ="150 90"></a>
+			  <a class="navbar-brand" href="#"><img src="./Assets/images/897ecbc4de52bcc013dbd15bf148edc7.png" class="rounded float-left" width ="150 90"></a>
 			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			    <span class="navbar-toggler-icon"></span>
 			  </button>

@@ -6,7 +6,7 @@
 <title>Home Page</title>
 <link href="Assets/css/bootstrap.css" rel="stylesheet">
 
-<%@ include file="Layouts/header.jsp" %>
+<%@ include file="../Layouts/header.jsp" %>
 </head>
 <body>
 	<div class="row" style = "margin-top: 6px;">
@@ -48,9 +48,9 @@
 		</div>
 	  </div>
 	  <div class="col-4">
-	  <%@ include file="Layouts/aside.jsp" %>
+	  <%@ include file="../Layouts/aside.jsp" %>
 	  </div>
 	</div>
-    <%@ include file="Layouts/footer.jsp" %>
+    <%@ include file="../Layouts/footer.jsp" %>
 </body>
 </html>
