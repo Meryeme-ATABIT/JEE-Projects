@@ -20,10 +20,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a7a1608-3bad-42ca-81db-866360f45cb4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/WebCatalogue/build/classes/fr/catalogue/servlet/AjoutPanierServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebCatalogue/build/classes/fr/catalogue/servlet/CategorieServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebCatalogue/build/classes/fr/catalogue/servlet/ProduitServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EARCatalogue/.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EARCatalogue/.settings/org.eclipse.wst.common.component" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EARCatalogue/.settings/org.eclipse.wst.common.project.facet.core.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EARCatalogue/EarContent/META-INF/application.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EJBCatalogue/.classpath" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EJBCatalogue/.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EJBCatalogue/.settings/org.eclipse.jdt.core.prefs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EJBCatalogue/.settings/org.eclipse.wst.common.component" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EJBCatalogue/.settings/org.eclipse.wst.common.project.facet.core.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EJBCatalogue/build/classes/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EJBCatalogue/build/classes/META-INF/ejb-jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EJBCatalogue/build/classes/META-INF/persistence.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EJBCatalogue/build/classes/beans/Categorie.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EJBCatalogue/build/classes/controllers/CatalogueController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EJBCatalogue/build/classes/controllers/interfaces/CatalogueLocal.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EJBCatalogue/build/classes/controllers/interfaces/CatalogueRemote.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EJBCatalogue/ejbModule/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EJBCatalogue/ejbModule/META-INF/ejb-jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EJBCatalogue/ejbModule/META-INF/persistence.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EJBCatalogue/ejbModule/beans/Categorie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EJBCatalogue/ejbModule/controllers/CatalogueController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EJBCatalogue/ejbModule/controllers/interfaces/CatalogueLocal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EJBCatalogue/ejbModule/controllers/interfaces/CatalogueRemote.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebCatalogue/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/WebCatalogue/.classpath" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebCatalogue/build/classes/fr/catalogue/servlet/CategorieServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebCatalogue/build/classes/fr/catalogue/servlet/CategorieServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebCatalogue/src/fr/catalogue/servlet/CategorieServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebCatalogue/src/fr/catalogue/servlet/CategorieServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,15 +76,13 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Développement mobile projets" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -76,6 +97,7 @@
       <option name="presentableId" value="Default" />
       <updated>1604918208939</updated>
       <workItem from="1604918210057" duration="847000" />
+      <workItem from="1606050599065" duration="636000" />
     </task>
     <servers />
   </component>
@@ -92,6 +114,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1604919298858">

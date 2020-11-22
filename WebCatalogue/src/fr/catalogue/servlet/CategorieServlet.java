@@ -1,40 +1,64 @@
 package fr.catalogue.servlet;
 
 import java.io.IOException;
+import java.util.Hashtable;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import beans.Categorie;
+import controllers.interfaces.CatalogueRemote;
 
 /**
  * Servlet implementation class CategorieServlet
  */
 @WebServlet("/Categorie")
 public class CategorieServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public CategorieServlet() {
+    
+	private static final long serialVersionUID = 7621852095996823481L;
+
+
+	public CategorieServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		HttpSession session = request.getSession();
+		Categorie categorie = null;
+		
+		try {
+			
+			final Hashtable<String, String> jndiProprties = new Hashtable<>();
+			jndiProprties.put(Context.URL_PKG_PREFIXES, "org.jboss.ejb.client.naming");
+			final Context context = new InitialContext(jndiProprties);
+			final String appName = "CatalogueEAR";
+			final String moduleName = "WebCatalogue";
+			final String beanName = "CatalogueJNDI";
+			final String viewClassName = CatalogueRemote.class.getName();
+			
+			CatalogueRemote remote = (CatalogueRemote) context.lookup("ejb:"+appName+"/"+moduleName+"/"+beanName+"!"+viewClassName);
+			
+			categorie = remote.getCategorie("DVD");
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		session.setAttribute("categorie",categorie.getNom());
+		response.sendRedirect("/Views/Categorie.jsp");
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 
