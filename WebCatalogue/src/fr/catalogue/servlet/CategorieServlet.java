@@ -3,6 +3,7 @@ package fr.catalogue.servlet;
 import java.io.IOException;
 import java.util.Hashtable;
 
+
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.servlet.ServletException;
@@ -12,8 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import beans.Categorie;
-import controllers.interfaces.CatalogueRemote;
+import fr.catalogue.beans.Categorie;
+import fr.catalogue.controllers.interfaces.CatalogueRemote;
 
 /**
  * Servlet implementation class CategorieServlet
@@ -52,7 +53,7 @@ public class CategorieServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		session.setAttribute("categorie",categorie.getNom());
+		session.setAttribute("categorie",categorie);
 		response.sendRedirect("/Views/Categorie.jsp");
 	}
 

@@ -1,4 +1,4 @@
-package beans;
+package fr.catalogue.beans;
 
 	import javax.persistence.*;
 	import java.io.Serializable;

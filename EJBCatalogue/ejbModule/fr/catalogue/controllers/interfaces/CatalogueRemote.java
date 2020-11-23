@@ -1,20 +1,20 @@
-package controllers.interfaces;
+package fr.catalogue.controllers.interfaces;
 
-import java.util.ArrayList;
-import java.util.Collection;
+import java.util.List;
 
 import javax.ejb.Remote;
 
-import beans.Categorie;
-import beans.Client;
-import beans.Commande;
-import beans.Produit;
+import fr.catalogue.beans.Categorie;
+import fr.catalogue.beans.Client;
+import fr.catalogue.beans.Commande;
+import fr.catalogue.beans.Produit;
 
 @Remote
 public interface CatalogueRemote {
 	//Categorie
 	Categorie getCategorie(String name);
-	ArrayList<Categorie> getCategories();
+	List<Categorie> getCategories();
+	List<Produit> getCategorieProduits(long id);
 	
 	//Produit
 	Produit getProduit(long id);

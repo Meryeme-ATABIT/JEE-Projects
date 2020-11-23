@@ -1,4 +1,4 @@
-package controllers.interfaces;
+package fr.catalogue.controllers.interfaces;
 
 import javax.ejb.Local;
 

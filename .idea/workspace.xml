@@ -19,11 +19,29 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a7a1608-3bad-42ca-81db-866360f45cb4" name="Default Changelist" comment="commit 2" />
+    <list default="true" id="9a7a1608-3bad-42ca-81db-866360f45cb4" name="Default Changelist" comment="commit 3">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EJBCatalogue/build/classes/controllers/CatalogueController.class" beforeDir="false" afterPath="$PROJECT_DIR$/EJBCatalogue/build/classes/controllers/CatalogueController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EJBCatalogue/build/classes/controllers/interfaces/CatalogueRemote.class" beforeDir="false" afterPath="$PROJECT_DIR$/EJBCatalogue/build/classes/controllers/interfaces/CatalogueRemote.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EJBCatalogue/ejbModule/beans/Categorie.java" beforeDir="false" afterPath="$PROJECT_DIR$/EJBCatalogue/ejbModule/fr/catalogue/beans/Categorie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EJBCatalogue/ejbModule/beans/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/EJBCatalogue/ejbModule/fr/catalogue/beans/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EJBCatalogue/ejbModule/beans/Commande.java" beforeDir="false" afterPath="$PROJECT_DIR$/EJBCatalogue/ejbModule/fr/catalogue/beans/Commande.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EJBCatalogue/ejbModule/beans/Produit.java" beforeDir="false" afterPath="$PROJECT_DIR$/EJBCatalogue/ejbModule/fr/catalogue/beans/Produit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EJBCatalogue/ejbModule/beans/Produit_commande.java" beforeDir="false" afterPath="$PROJECT_DIR$/EJBCatalogue/ejbModule/fr/catalogue/beans/Produit_commande.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EJBCatalogue/ejbModule/controllers/CatalogueController.java" beforeDir="false" afterPath="$PROJECT_DIR$/EJBCatalogue/ejbModule/fr/catalogue/controllers/CatalogueController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EJBCatalogue/ejbModule/controllers/interfaces/CatalogueLocal.java" beforeDir="false" afterPath="$PROJECT_DIR$/EJBCatalogue/ejbModule/fr/catalogue/controllers/interfaces/CatalogueLocal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EJBCatalogue/ejbModule/controllers/interfaces/CatalogueRemote.java" beforeDir="false" afterPath="$PROJECT_DIR$/EJBCatalogue/ejbModule/fr/catalogue/controllers/interfaces/CatalogueRemote.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebCatalogue/WebContent/Views/Categorie.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebCatalogue/WebContent/Views/Categorie.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebCatalogue/build/classes/fr/catalogue/servlet/CategorieServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebCatalogue/build/classes/fr/catalogue/servlet/CategorieServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebCatalogue/src/fr/catalogue/servlet/CategorieServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebCatalogue/src/fr/catalogue/servlet/CategorieServlet.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -53,16 +71,19 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\E-services-eclipse\WebProject\EJBCatalogue\ejbModule\fr\catalogue" />
+    </key>
+  </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -78,6 +99,8 @@
       <updated>1604918208939</updated>
       <workItem from="1604918210057" duration="847000" />
       <workItem from="1606050599065" duration="1353000" />
+      <workItem from="1606072693443" duration="494000" />
+      <workItem from="1606166895373" duration="871000" />
     </task>
     <task id="LOCAL-00001" summary="commit 2">
       <created>1606051540045</created>
@@ -86,7 +109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606051540045</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="commit 3">
+      <created>1606072813666</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1606072813666</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -106,7 +136,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit 2" />
+    <MESSAGE value="commit 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit 3" />
   </component>
   <component name="WindowStateProjectService">
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1604919298858">

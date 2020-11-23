@@ -1,18 +1,18 @@
-package controllers;
+package fr.catalogue.controllers;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-import beans.Categorie;
-import beans.Client;
-import beans.Commande;
-import beans.Produit;
-import controllers.interfaces.CatalogueLocal;
-import controllers.interfaces.CatalogueRemote;
+import fr.catalogue.beans.Categorie;
+import fr.catalogue.beans.Client;
+import fr.catalogue.beans.Commande;
+import fr.catalogue.beans.Produit;
+import fr.catalogue.controllers.interfaces.CatalogueLocal;
+import fr.catalogue.controllers.interfaces.CatalogueRemote;
 
 @Stateless(name = "CatalogueJNDI")
 public class CatalogueController implements CatalogueLocal, CatalogueRemote {
@@ -45,10 +45,17 @@ public class CatalogueController implements CatalogueLocal, CatalogueRemote {
 	}
 	
 	
-	public ArrayList<Categorie> getCategories(){
+	public List<Categorie> getCategories(){
 		Query q = manager.createQuery("SELECT * FROM Categorie");
-		ArrayList<Categorie> categories = (ArrayList<Categorie>) q.getResultList();
+		List<Categorie> categories =  q.getResultList();
 		return categories;
+	}
+	
+	public List<Produit> getCategorieProduits(long id){
+		List<Produit> produits = null;
+		
+		
+		return produits;
 	}
 	
 	public void CreateCommande(Commande commande) {
