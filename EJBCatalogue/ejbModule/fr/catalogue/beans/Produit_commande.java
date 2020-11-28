@@ -1,7 +1,7 @@
 package fr.catalogue.beans;
 
 	import javax.persistence.*;
-	import java.io.Serializable;
+import java.io.Serializable;
 
 
 	@Entity

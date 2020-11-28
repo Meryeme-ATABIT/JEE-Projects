@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 
     <%@ page import="fr.catalogue.beans.Categorie" %>
-	
+	<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,20 +12,19 @@
 <body>
 <div class="row row-cols-1 row-cols-md-3">
 
-        <%
-            Categorie cat = (Categorie) session.getAttribute("categorie");
-            
-                %>
-                    <div class="col mb-4">
-                        <div class="card">
-                            
-                            <div class="card-body">
-                            <h5 class="card-title"> <%=cat.getId() %> </h5>
-                                <h5 class="card-title"> <%=cat.getNom() %> </h5>
-                 
-                            </div>
-                        </div>
-                    </div>
+       <%
+            List<Categorie> categories = (List<Categorie>) session.getAttribute("categories");
+            if (categories != null) {
+                for (Categorie cat : categories) {
+                %>      
+                                     <h5 class="card-title"> <%=cat.getNom() %> </h5>
+                <%
+                }
+            } else {
+                    // TODO : when the categories empty
+                    }
+        %>
+      
                 
 
     </div>

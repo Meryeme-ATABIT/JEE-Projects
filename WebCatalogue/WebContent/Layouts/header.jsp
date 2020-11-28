@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ page import="fr.catalogue.beans.Categorie" %>
+	<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -13,7 +15,7 @@
 	
 	<header class="header">
 		<nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #0A0A0A;">
-			  <a class="navbar-brand" href="#"><img src="./Assets/images/897ecbc4de52bcc013dbd15bf148edc7.png" class="rounded float-left" width ="150 90"></a>
+			  <a class="navbar-brand" href="#"><img src="/Assets/images/897ecbc4de52bcc013dbd15bf148edc7.png" class="rounded float-left" width ="150 90"></a>
 			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			    <span class="navbar-toggler-icon"></span>
 			  </button>
@@ -28,11 +30,18 @@
 			          Catégorie
 			        </a>
 			        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-			          <a class="dropdown-item" href="#">CD</a>
-			          <div class="dropdown-divider"></div>
-			          <a class="dropdown-item" href="#">DVD</a>
-			          <div class="dropdown-divider"></div>
-			          <a class="dropdown-item" href="#">Livres</a>
+			         <%
+            			List<Categorie> categories = (List<Categorie>) session.getAttribute("categories");
+            			if (categories != null) {
+                			for (Categorie cat : categories) {
+                				%>      
+	                				<a class="dropdown-item" href="/Views/Produit.jsp"><%=cat.getNom() %></a>
+				          			<div class="dropdown-divider"></div>
+                				<%
+               				 }
+	            		} 
+        			%>
+			 
 			        </div>
 			      </li>
 			    </ul>

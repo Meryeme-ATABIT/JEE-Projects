@@ -10,7 +10,7 @@
 <footer>
 	<div class="card text-center text-white bg-dark mb-3">
 	  <div class="card-header" style="background: #0A0A0A; text-color: #000000;">
-	    <img src="./Assets/images/897ecbc4de52bcc013dbd15bf148edc7.png" class="rounded" width ="150 90" >
+	    <img src="/Assets/images/897ecbc4de52bcc013dbd15bf148edc7.png" class="rounded" width ="150 90" >
 	  </div>
 	  <div class="card-body" style="background: #292929;">
 	    <h5 class="card-title">Chez nous :</h5>

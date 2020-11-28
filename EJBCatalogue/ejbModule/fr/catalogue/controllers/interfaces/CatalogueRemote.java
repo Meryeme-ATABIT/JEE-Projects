@@ -1,13 +1,12 @@
 package fr.catalogue.controllers.interfaces;
 
-import java.util.List;
-
-import javax.ejb.Remote;
-
 import fr.catalogue.beans.Categorie;
 import fr.catalogue.beans.Client;
 import fr.catalogue.beans.Commande;
 import fr.catalogue.beans.Produit;
+
+import javax.ejb.Remote;
+import java.util.List;
 
 @Remote
 public interface CatalogueRemote {

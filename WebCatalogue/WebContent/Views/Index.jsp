@@ -4,7 +4,7 @@
 <html>
 <head> 
 <title>Home Page</title>
-<link href="Assets/css/bootstrap.css" rel="stylesheet">
+<link href="/Assets/css/bootstrap.css" rel="stylesheet">
 
 <%@ include file="../Layouts/header.jsp" %>
 </head>
@@ -20,13 +20,13 @@
 				<div class="container">
 				  <div class="row">
 				    <div class="col-sm">
-				      <img src="Assets/images/36836-1-dvd-transparent-image.png" class="rounded mx-auto d-block " width="200 200"  >
+				      <img src="/Assets/images/36836-1-dvd-transparent-image.png" class="rounded mx-auto d-block " width="200 200"  >
 				    </div>
 				    <div class="col-sm">
-				     <img src="Assets/images/Edwards-rel.png" class="rounded mx-auto d-block" width="200 200" >
+				     <img src="/Assets/images/Edwards-rel.png" class="rounded mx-auto d-block" width="200 200" >
 				    </div>
 				    <div class="col-sm">
-				      <img src="Assets/images/unnamed.png" class="rounded mx-auto d-block " width="200 200" >
+				      <img src="/Assets/images/unnamed.png" class="rounded mx-auto d-block " width="200 200" >
 				    </div>
 				  </div>
                 </div>
