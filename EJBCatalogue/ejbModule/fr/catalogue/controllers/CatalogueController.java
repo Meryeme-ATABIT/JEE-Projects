@@ -19,8 +19,8 @@ public class CatalogueController implements CatalogueLocal, CatalogueRemote {
 	@PersistenceContext(unitName="catalogueManager")
 	EntityManager manager;
 	
-	public Categorie getCategorie(String name) {
-		Query q = manager.createQuery("SELECT c FROM Categorie c WHERE c.nom=:name").setParameter("name", name);
+	public Categorie getCategorie(int id) {
+		Query q = manager.createQuery("SELECT c FROM Categorie c WHERE c.id=:id").setParameter("id", id);
 		Categorie categoriebean = (Categorie) q.getSingleResult();
 		return categoriebean;
 	}
@@ -50,9 +50,9 @@ public class CatalogueController implements CatalogueLocal, CatalogueRemote {
 		return categories;
 	}
 	
-	public List<Produit> getCategorieProduits(long id){
-		List<Produit> produits = null;
-		
+	public List<Produit> getCategorieProduits(Categorie categorie){
+		Query q = manager.createQuery("SELECT c FROM Produit c WHERE c.categorie=:categorie").setParameter("categorie", categorie);
+		List<Produit> produits =  q.getResultList();
 		
 		return produits;
 	}

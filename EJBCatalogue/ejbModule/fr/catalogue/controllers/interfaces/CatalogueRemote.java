@@ -11,9 +11,9 @@ import java.util.List;
 @Remote
 public interface CatalogueRemote {
 	//Categorie
-	Categorie getCategorie(String name);
+	Categorie getCategorie(int id);
 	List<Categorie> getCategories();
-	List<Produit> getCategorieProduits(long id);
+	List<Produit> getCategorieProduits(Categorie categorie);
 	
 	//Produit
 	Produit getProduit(long id);

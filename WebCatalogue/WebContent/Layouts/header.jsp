@@ -35,7 +35,7 @@
             			if (categories != null) {
                 			for (Categorie cat : categories) {
                 				%>      
-	                				<a class="dropdown-item" href="/Views/Produit.jsp"><%=cat.getNom() %></a>
+	                				<a class="dropdown-item" href=${pageContext.request.contextPath}<%= "/Produit?id=" + cat.getId() %>><%=cat.getNom() %></a>
 				          			<div class="dropdown-divider"></div>
                 				<%
                				 }

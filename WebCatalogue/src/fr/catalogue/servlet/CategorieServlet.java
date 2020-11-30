@@ -1,8 +1,8 @@
 package fr.catalogue.servlet;
 
-import java.io.IOException;
-import java.util.Hashtable;
-import java.util.List;
+import fr.catalogue.beans.Categorie;
+import fr.catalogue.beans.Produit;
+import fr.catalogue.controllers.interfaces.CatalogueRemote;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -12,9 +12,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import fr.catalogue.beans.Produit;
-import fr.catalogue.beans.Categorie;
-import fr.catalogue.controllers.interfaces.CatalogueRemote;
+import java.io.IOException;
+import java.util.Hashtable;
+import java.util.List;
 
 /**
  * Servlet implementation class CategorieServlet
