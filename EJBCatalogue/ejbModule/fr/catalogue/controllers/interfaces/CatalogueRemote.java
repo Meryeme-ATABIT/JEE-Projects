@@ -24,7 +24,8 @@ public interface CatalogueRemote {
 	
 	
 	//Client
-	Client getClient(long id);
-	void CreateClient(Client client);
+	Client getClient(String email, String password);
+	
+	Client CreateClient(Client client);
 }
 

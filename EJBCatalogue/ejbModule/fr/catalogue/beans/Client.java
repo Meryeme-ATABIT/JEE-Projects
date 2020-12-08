@@ -17,17 +17,52 @@ public class Client implements Serializable {
 
     @Column(nullable = false)
     private String nom;
-
+    
+    @Column(nullable = false)
+    private String prenom;
+    
     @Column(nullable = false)
     private String email;
+    
+    @Column(nullable = false)
+    private String password;
 
     @Column(nullable = false)
     private String telephone;
 
     @Column(nullable = false)
     private String adresse;
+    
+    public Client() {
+    	super();
+    }
+    
+    public Client(String nom,String prenom, String email, String telephone, String password, String adresse) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.password = password;
+        this.email = email;
+        this.telephone = telephone;
+        this.adresse = adresse;
+    }
+    
+    public String getPrenom() {
+		return prenom;
+	}
 
-    @OneToMany
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	@OneToMany
     private Collection<Commande> commandes;
 
     public long getId() {

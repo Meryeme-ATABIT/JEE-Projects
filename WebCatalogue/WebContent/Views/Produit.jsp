@@ -18,24 +18,31 @@
       <h2>Catégorie : <%=CategorieName %></h2> 
     </div>
 	<div class="row" style = "margin-top: 6px;">
-	  <div class="col-8">
+	  <div <% if(session.getAttribute("client") == null) { %>class="col-9"<% } else { %>class="col-12" <% } %> >
 		<div class="container">
 		  <div class="row">
 		  <%
             List<Produit> produits = (List<Produit>) session.getAttribute("produits");
             if (produits != null) {
                 for (Produit produit : produits) {
-                %>      
-                  <div class="col-sm">
-		          <div class="card" style="width: 18rem;">
-				  <img class="ml-2"  src="/Assets/images/cd1.png" width="200" height="200" alt="Card image cap">
-				  <div class="card-body">
-				    <h5 class="card-title"><%=produit.getNom() %></h5>
-				    <p class="card-text"><%=produit.getDescription() %></p>
-				    <a href="#" class="btn btn-primary" style="background: #0A0A0A;">Ajouter au panier</a>
-				  </div>
-				</div>
-		    </div>
+                %>  
+                 <div class="col-" style="margin: 30px;">
+				        
+				            <div class="card card-1" style=" padding:20px;">
+				                <div class="pr-3 row justify-content-end">
+				                    <div class="fa fa-heart-o like"></div>
+				                </div>
+				                <div class="product-pic"> <img class="pic1" src="../Assets/images/the_witcher.jpg"> </div> <small class="category"><%=produit.getDescription() %></small>
+				                <h5 class="product-name"><%=produit.getNom() %></h5>
+				                <div class="row px-3 justify-content-between">
+				                    <p class="price"><%=produit.getPrix()%></p>
+				                    <div class="stars"> <span class="fa fa-star star-active"></span> <span class="fa fa-star star-active"></span> <span class="fa fa-star star-active"></span> <span class="fa fa-star-o"></span> <span class="fa fa-star-o"></span> </div>
+				                    <a href="#" class="btn btn-primary" style="background: #0A0A0A;">Ajouter au panier</a>
+				                </div>
+				            </div>
+				   
+               </div>    
+                
                 <%
                 }
             } 
@@ -44,9 +51,15 @@
 		  </div>
 		</div>
 	  </div>
-	  <div class="col-4">
+	  <%
+            
+            if (session.getAttribute("client") == null) {
+               
+                %>   
+	  <div class="col-3">
 	  <%@ include file="../Layouts/aside.jsp" %>  
 	  </div>
+	  <% } %>
 	</div>
     <%@ include file="../Layouts/footer.jsp" %>  
 </body>

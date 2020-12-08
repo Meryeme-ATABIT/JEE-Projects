@@ -10,7 +10,7 @@
 </head>
 <body>
 	<div class="row" style = "margin-top: 6px;">
-	  <div class="col-8">
+	  <div class="col-9">
 		<div class="card">
 		  <div class="card-header text-center">
 		    Bienvenue !
@@ -47,7 +47,7 @@
 		  </div>
 		</div>
 	  </div>
-	  <div class="col-4">
+	  <div class="col-3">
 	  <%@ include file="../Layouts/aside.jsp" %>
 	  </div>
 	</div>

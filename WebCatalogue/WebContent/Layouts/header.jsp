@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ page import="fr.catalogue.beans.Categorie" %>
+    <%@ page import="fr.catalogue.beans.Client" %>
 	<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html>
@@ -41,12 +42,28 @@
                				 }
 	            		} 
         			%>
-			 
 			        </div>
 			      </li>
 			    </ul>
 			    <form class="form-inline my-2 my-lg-0">
-			      <li class="nav-item">
+			    <%
+			    Client client = (Client) session.getAttribute("client");
+			    if(client == null){
+			    %>
+			      <li class="nav-item" style="margin-bottom: 10px">
+			        <a class="nav-link disabled" href="${pageContext.request.contextPath}/Views/Signup.jsp">S'inscrire</a>
+			      </li>
+			    <%
+			    }
+			    else{
+			      %>
+			      <li class="nav-item" style="margin-bottom: 10px">
+			        <a class="nav-link disabled" href="${pageContext.request.contextPath}<%= "/Client?logout=" %>">Deconnexion</a>
+			      </li>
+			      <%
+			    }
+			      %>
+			      <li class="nav-item" style="margin-bottom: 10px">
 			        <a class="nav-link disabled" href="#">Panier</a>
 			      </li>
 					<svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-basket-fill" fill="#EE0404" xmlns="http://www.w3.org/2000/svg">

@@ -37,10 +37,18 @@ public class CatalogueController implements CatalogueLocal, CatalogueRemote {
 		return commande;
 	}
 	
-	public Client getClient(long id) {
-		Query q = manager.createQuery("SELECT c FROM Client WHERE c.id=:id").setParameter("id", id);
-		Client client = (Client) q.getSingleResult();
-		return client;
+	public Client getClient(String email, String password) {
+		Query q = manager.createQuery("SELECT c FROM Client c WHERE c.email=:em AND c.password=:ps").setParameter("em", email).setParameter("ps", password);
+		try {
+			 Client client = (Client) q.getSingleResult();
+			 System.out.println("--------------------------------------------------------------------------------------------------");
+			 return client;
+		} catch(Exception e) {
+			System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+			e.printStackTrace();
+			System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+			return null;
+		}
 	}
 	
 	
@@ -54,6 +62,7 @@ public class CatalogueController implements CatalogueLocal, CatalogueRemote {
 		Query q = manager.createQuery("SELECT c FROM Produit c WHERE c.categorie=:categorie").setParameter("categorie", categorie);
 		List<Produit> produits =  q.getResultList();
 		
+		
 		return produits;
 	}
 	
@@ -62,8 +71,12 @@ public class CatalogueController implements CatalogueLocal, CatalogueRemote {
 	}
 
 	@Override
-	public void CreateClient(Client client) {
-		// TODO Auto-generated method stub
-		
+	public Client CreateClient(Client client) {
+		try {
+            manager.persist(client);
+            return client;
+        } catch (Exception e) {
+            return null;
+        }
 	}
 }
