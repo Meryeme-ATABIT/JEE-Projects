@@ -26,7 +26,7 @@ public class CatalogueController implements CatalogueLocal, CatalogueRemote {
 	}
 	
 	public Produit getProduit(long id) {
-		Query q = manager.createQuery("SELECT c FROM Produit WHERE c.id=:id").setParameter("id", id);
+		Query q = manager.createQuery("SELECT c FROM Produit c WHERE c.id=:id").setParameter("id", id);
 		Produit produit = (Produit) q.getSingleResult();
 		return produit;
 	}
@@ -51,7 +51,11 @@ public class CatalogueController implements CatalogueLocal, CatalogueRemote {
 		}
 	}
 	
-	
+	public Categorie getCategorieByName(String name) {
+		Query q = manager.createQuery("SELECT c FROM Categorie c WHERE c.nom=:nom").setParameter("nom", name);
+		Categorie categoriebean = (Categorie) q.getSingleResult();
+		return categoriebean;
+	}
 	public List<Categorie> getCategories(){
 		Query q = manager.createQuery("SELECT c FROM Categorie c");
 		List<Categorie> categories =  q.getResultList();
@@ -66,8 +70,13 @@ public class CatalogueController implements CatalogueLocal, CatalogueRemote {
 		return produits;
 	}
 	
-	public void CreateCommande(Commande commande) {
-		
+	public Commande CreateCommande(Commande commande) {
+		try {
+            manager.persist(commande);
+            return commande;
+        } catch (Exception e) {
+            return null;
+        }
 	}
 
 	@Override

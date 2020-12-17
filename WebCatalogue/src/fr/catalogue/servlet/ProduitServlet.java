@@ -40,9 +40,10 @@ public class ProduitServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		List<Produit> produits = null;
 		Categorie categorie = null;
+		String pagePre = null; 
+		CatalogueRemote remote = null;
 		Map<String, String[]> mapParams = request.getParameterMap();
-		if (mapParams.containsKey("id")) {
-            int id = Integer.parseInt(request.getParameter("id"));
+		
             try {
 				final Hashtable<String, String> jndiProprties = new Hashtable<>();
 				jndiProprties.put(Context.URL_PKG_PREFIXES, "org.jboss.ejb.client.naming");
@@ -51,17 +52,32 @@ public class ProduitServlet extends HttpServlet {
 				final String moduleName = "EJBCatalogue";
 				final String beanName = "CatalogueJNDI";
 				final String viewClassName = CatalogueRemote.class.getName();
-				CatalogueRemote remote = (CatalogueRemote) context.lookup("ejb:"+appName+"/"+moduleName+"/"+beanName+"!"+viewClassName);
-				categorie = remote.getCategorie(id);
-				produits = remote.getCategorieProduits(categorie);
+				remote = (CatalogueRemote) context.lookup("ejb:"+appName+"/"+moduleName+"/"+beanName+"!"+viewClassName);
+			
 			
             } catch(Exception e) {
             	e.printStackTrace();
             }
-        session.setAttribute("CategorieName", categorie.getNom());
-		session.setAttribute("produits", produits);
-		response.sendRedirect("./Views/Produit.jsp");
-	}
+            if (mapParams.containsKey("id")) {
+            	int id = Integer.parseInt(request.getParameter("id"));
+            	categorie = remote.getCategorie(id);
+				produits = remote.getCategorieProduits(categorie);
+              
+				
+            }
+            else {
+            	if(session.getAttribute("CategorieName") != null) {
+            		String name = session.getAttribute("CategorieName").toString();
+            		categorie = remote.getCategorieByName(name);
+            		produits = remote.getCategorieProduits(categorie);
+            	}
+  
+            	
+            }
+            session.setAttribute("precedent", "produit");
+            session.setAttribute("CategorieName", categorie.getNom());
+			session.setAttribute("produits", produits);
+			response.sendRedirect("./Views/Produit.jsp");
 		}
 
 

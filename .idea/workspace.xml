@@ -19,9 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a7a1608-3bad-42ca-81db-866360f45cb4" name="Default Changelist" comment="Product page">
-      <change beforePath="$PROJECT_DIR$/WebCatalogue/build/classes/fr/catalogue/servlet/ProduitServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/WebCatalogue/build/classes/fr/catalogue/servlet/ProduitServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebCatalogue/src/fr/catalogue/servlet/ProduitServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebCatalogue/src/fr/catalogue/servlet/ProduitServlet.java" afterDir="false" />
+    <list default="true" id="9a7a1608-3bad-42ca-81db-866360f45cb4" name="Default Changelist" comment="Signup and Signin Client">
+      <change beforePath="$PROJECT_DIR$/WebCatalogue/src/fr/catalogue/servlet/ClientServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebCatalogue/src/fr/catalogue/servlet/ClientServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,15 +64,13 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -93,6 +90,7 @@
       <workItem from="1606166895373" duration="1683000" />
       <workItem from="1606603286583" duration="368000" />
       <workItem from="1606776916761" duration="207000" />
+      <workItem from="1607387268390" duration="318000" />
     </task>
     <task id="LOCAL-00001" summary="commit 2">
       <created>1606051540045</created>
@@ -129,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606777007595</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Signup and Signin Client">
+      <created>1607387430224</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1607387430224</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,7 +158,8 @@
     <MESSAGE value="commit 4" />
     <MESSAGE value="Recuperate categories names from database" />
     <MESSAGE value="Product page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Product page" />
+    <MESSAGE value="Signup and Signin Client" />
+    <option name="LAST_COMMIT_MESSAGE" value="Signup and Signin Client" />
   </component>
   <component name="WindowStateProjectService">
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1604919298858">
@@ -168,9 +174,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="550" y="117" key="Github.UntrackedFilesDialog/0.0.1536.824@0.0.1536.824" timestamp="1604918367771" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1606777019580">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1607387440759">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1606777019580" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1607387440759" />
   </component>
 </project>

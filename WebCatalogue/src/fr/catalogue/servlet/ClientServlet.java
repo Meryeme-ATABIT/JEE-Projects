@@ -1,9 +1,7 @@
 package fr.catalogue.servlet;
 
-import java.io.IOException;
-import java.util.Hashtable;
-import java.util.List;
-import java.util.Map;
+import fr.catalogue.beans.Client;
+import fr.catalogue.controllers.interfaces.CatalogueRemote;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -13,9 +11,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
-import fr.catalogue.beans.Client;
-import fr.catalogue.controllers.interfaces.CatalogueRemote;
+import java.io.IOException;
+import java.util.Hashtable;
+import java.util.Map;
 
 /**
  * Servlet implementation class ClientServlet
@@ -63,12 +61,14 @@ public class ClientServlet extends HttpServlet {
             	
             	System.out.println("\nLogin : " + client.getEmail() + " / password " + client.getPassword() );
             	
-            	if(client != null) {
+            	if(client != null){ 
             		session.setAttribute("client", client);
-            		response.sendRedirect("./Views/Index.jsp");
-            	}else {
-            		response.sendRedirect("./Views/Produit.jsp");
-                }   	
+            		if(session.getAttribute("precedent") == "produit") {
+            			response.sendRedirect("/Produit");
+            		}else {
+            			response.sendRedirect("./Views/Index.jsp");
+                } 
+            }
             }
             //si le client veut s'inscrire
             if(mapParams.containsKey("nom") && remote != null) {
@@ -89,8 +89,12 @@ public class ClientServlet extends HttpServlet {
             	}
             }
             if(mapParams.containsKey("logout")) {
-            	 request.getSession(true).setAttribute("client", null);
-            	 response.sendRedirect("./Views/Index.jsp");
+            	 session.setAttribute("client", null);
+            	 if(session.getAttribute("precedent") == "produit") {
+         			response.sendRedirect("/Produit");
+         		}else {
+         			response.sendRedirect("./Views/Index.jsp");
+             } 
             }
 	}
 

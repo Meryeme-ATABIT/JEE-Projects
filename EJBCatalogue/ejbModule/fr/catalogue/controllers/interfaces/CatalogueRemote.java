@@ -12,6 +12,7 @@ import java.util.List;
 public interface CatalogueRemote {
 	//Categorie
 	Categorie getCategorie(int id);
+	Categorie getCategorieByName(String name);
 	List<Categorie> getCategories();
 	List<Produit> getCategorieProduits(Categorie categorie);
 	
@@ -20,7 +21,7 @@ public interface CatalogueRemote {
 	
 	//Commande
 	Commande getCommande(long id);
-	void CreateCommande(Commande commande);
+	Commande CreateCommande(Commande commande);
 	
 	
 	//Client

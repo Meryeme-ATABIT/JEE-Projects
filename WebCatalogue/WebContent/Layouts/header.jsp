@@ -24,10 +24,10 @@
 			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 			    <ul class="navbar-nav mr-auto">
 			      <li class="nav-item active">
-			        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+			        <a class="nav-link" href="${pageContext.request.contextPath}/Views/Index.jsp">Home <span class="sr-only">(current)</span></a>
 			      </li>
 			      <li class="nav-item dropdown">
-			        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			        <a class="nav-link dropdown-toggle" href="${pageContext.request.contextPath}/Index" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			          Catégorie
 			        </a>
 			        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -35,6 +35,7 @@
             			List<Categorie> categories = (List<Categorie>) session.getAttribute("categories");
             			if (categories != null) {
                 			for (Categorie cat : categories) {
+                				System.out.println(cat.getNom());
                 				%>      
 	                				<a class="dropdown-item" href=${pageContext.request.contextPath}<%= "/Produit?id=" + cat.getId() %>><%=cat.getNom() %></a>
 				          			<div class="dropdown-divider"></div>
@@ -51,21 +52,35 @@
 			    if(client == null){
 			    %>
 			      <li class="nav-item" style="margin-bottom: 10px">
-			        <a class="nav-link disabled" href="${pageContext.request.contextPath}/Views/Signup.jsp">S'inscrire</a>
+			        <a class="nav-link disabled" href=${pageContext.request.contextPath}/Views/Signup.jsp>S'inscrire</a>
 			      </li>
 			    <%
 			    }
 			    else{
 			      %>
 			      <li class="nav-item" style="margin-bottom: 10px">
-			        <a class="nav-link disabled" href="${pageContext.request.contextPath}<%= "/Client?logout=" %>">Deconnexion</a>
+			        <a class="nav-link disabled" href=${pageContext.request.contextPath}<%= "/Client?logout=" %>>Deconnexion</a>
+			      </li>
+			      <%
+			    }
+			    int nb = Integer.parseInt(session.getAttribute("NbPanier").toString());
+			   
+			    System.out.println(nb);
+			    if(nb > 0){
+			      %>
+			      <li class="nav-item" style="margin-bottom: 10px">
+			        <a class="nav-link disabled" href=${pageContext.request.contextPath}/Views/Panier.jsp>Panier<span class="badge badge-danger">  <%= " " + nb %></span></a>
+			      </li>
+			      <% 
+			    }
+			    else{
+			      %>
+			      <li class="nav-item" style="margin-bottom: 10px">
+			        <a class="nav-link disabled" href=${pageContext.request.contextPath}/Views/Panier.jsp>Panier</a>
 			      </li>
 			      <%
 			    }
 			      %>
-			      <li class="nav-item" style="margin-bottom: 10px">
-			        <a class="nav-link disabled" href="#">Panier</a>
-			      </li>
 					<svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-basket-fill" fill="#EE0404" xmlns="http://www.w3.org/2000/svg">
 					  <path fill-rule="evenodd" d="M5.071 1.243a.5.5 0 0 1 .858.514L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 6h1.717L5.07 1.243zM3.5 10.5a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3z"/>
 					</svg>

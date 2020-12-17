@@ -1,8 +1,8 @@
 package fr.catalogue.beans;
 import javax.persistence.*;
 import java.io.Serializable;
-import java.sql.Timestamp;
 import java.util.Collection;
+import java.util.List;
 
 @Entity
 @Table(schema = "catalogue", name = "commandes")
@@ -22,7 +22,7 @@ public class Commande implements Serializable {
     private float montant;
 
     @Column(nullable = false)
-    private Timestamp date_creation;
+    private String date_creation;
 
     @Column(nullable = false)
     private int no_confirmation;
@@ -31,9 +31,21 @@ public class Commande implements Serializable {
     private Client client;
 
     @OneToMany
-    private Collection<Produit> produits;
-
-
+    private List<Produit> produits;
+    
+    public Commande() {
+    	super();
+    }
+    public Commande(float montant, String date_creation, int conf, Client client, List<Produit> panier) {
+ 
+    	   this.montant = montant;
+           this.date_creation = date_creation;
+           this.no_confirmation = conf;
+           this.client = client;
+           this.produits = panier;
+    }
+  
+    
     public int getId() {
         return id;
     }
@@ -50,11 +62,11 @@ public class Commande implements Serializable {
         this.montant = montant;
     }
 
-    public Timestamp getDate_creation() {
+    public String getDate_creation() {
         return date_creation;
     }
 
-    public void setDate_creation(Timestamp date_creation) {
+    public void setDate_creation(String date_creation) {
         this.date_creation = date_creation;
     }
 
@@ -78,7 +90,7 @@ public class Commande implements Serializable {
         return produits;
     }
 
-    public void setProduits(Collection<Produit> produits) {
+    public void setProduits(List<Produit> produits) {
         this.produits = produits;
     }
     

@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.List;
 
@@ -34,7 +35,7 @@ public class CategorieServlet extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		List<Categorie> categories = null;
-		List<Produit> panier = null;
+		List<Produit> panier = new ArrayList<>();
 		
 		try {
 			
@@ -53,8 +54,19 @@ public class CategorieServlet extends HttpServlet {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		session.setAttribute("panier", panier);
+		session.setAttribute("precedent", "index");
+		
+		if(session.getAttribute("panier") == null) {
+			session.setAttribute("panier", panier);
+		}
+		
+		if(session.getAttribute("categories") == null) {
 		session.setAttribute("categories", categories);
+		}
+		
+		if(session.getAttribute("NbPanier") == null) {
+			session.setAttribute("NbPanier", 0);
+		}
 		response.sendRedirect("./Views/Index.jsp");
 	}
 

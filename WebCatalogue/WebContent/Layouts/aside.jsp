@@ -9,7 +9,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
 <aside style="border-color: grey; border-radius: 5px; border-style: inset; margin: 30px; ">
- <form style="padding: 15px; margin-bottom: 20px;" action="${pageContext.request.contextPath}/Client" method="POST" class="was-validated">
+ <form style="padding: 15px; margin-bottom: 20px;" action="${pageContext.request.contextPath}/Client" method="GET" class="was-validated">
  	  <h1 style="text-align: center; margin-top: 20px; margin-bottom: 20px;">Sign in</h1>
 	  <div class="form-group">
 	    <label for="login">Adresse mail</label>

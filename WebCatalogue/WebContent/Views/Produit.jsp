@@ -7,7 +7,7 @@
 <head> 
 <title>Home Page</title>
 <link href="../Assets/css/bootstrap.css" rel="stylesheet">
-
+ <script src="../Assets/js/scripts.js"></script> 
 <%@ include file="../Layouts/header.jsp" %>  
 </head>
 <body>
@@ -37,7 +37,7 @@
 				                <div class="row px-3 justify-content-between">
 				                    <p class="price"><%=produit.getPrix()%></p>
 				                    <div class="stars"> <span class="fa fa-star star-active"></span> <span class="fa fa-star star-active"></span> <span class="fa fa-star star-active"></span> <span class="fa fa-star-o"></span> <span class="fa fa-star-o"></span> </div>
-				                    <a href="#" class="btn btn-primary" style="background: #0A0A0A;">Ajouter au panier</a>
+				                    <button id="addProduct" onclick=<%= "addToPanier(" + produit.getId() + ")" %> class="btn btn-primary" style="background: #0A0A0A;">Ajouter au panier</button>
 				                </div>
 				            </div>
 				   
@@ -61,6 +61,7 @@
 	  </div>
 	  <% } %>
 	</div>
-    <%@ include file="../Layouts/footer.jsp" %>  
+    <%@ include file="../Layouts/footer.jsp" %> 
+   
 </body>
 </html>

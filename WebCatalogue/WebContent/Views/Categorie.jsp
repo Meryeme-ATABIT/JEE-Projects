@@ -16,6 +16,7 @@
             List<Categorie> categories = (List<Categorie>) session.getAttribute("categories");
             if (categories != null) {
                 for (Categorie cat : categories) {
+                	
                 %>      
                                      <h5 class="card-title"> <%=cat.getNom() %> </h5>
                 <%
